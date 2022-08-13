@@ -1,0 +1,63 @@
+body {
+  font: 110%/1.4 system-ui, sans-serif;
+  display: grid;
+  place-content: start center;
+  margin: 5em 0;
+  background: fixed radial-gradient(circle, #fff0, #000f), fixed center / 30vmin 40vmin url(https://media0.giphy.com/media/xT8qBp57MCcXQN6i2s/giphy.gif?cid=ecf05e477v9jhpdzg87ffs8ml7cjjv1z9lvb4ra7w8hkoern&rid=giphy.gif&ct=g);
+}
+.chat {
+  width: 60ch;
+  display: grid;
+  grid-template-columns: [recv-start] 5ch [send-start] 1fr [recv-end] 5ch [send-end];
+  grid-gap: 3rem;
+}
+.chat q {
+  quotes: '"' '"' "'" "'";
+}
+.chat q:before {
+  content: open-quote;
+}
+.chat q:after {
+  content: close-quote;
+}
+.chat a > img {
+  max-width: 5ch;
+  aspect-ratio: 1;
+  object-fit: cover;
+  box-shadow: 0 0 10px #0003;
+  border-radius: 50%;
+  position: sticky;
+  top: 1rem;
+}
+.chat .gif {
+  max-width: 100%;
+}
+.chat .msg {
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem;
+  padding-bottom: 1.5rem;
+  box-shadow: 0 0 10px #0003;
+  background: linear-gradient(rgb(192, 255, 238) calc(100% - 0.5rem), #0003);
+  border-radius: 1rem;
+}
+.chat .recv {
+  grid-column: recv;
+  grid-template-columns: 5ch 1fr;
+}
+.chat .send {
+  grid-column: send;
+  grid-template-columns: 1fr 5ch;
+  background: linear-gradient(gold calc(100% - 0.5rem), #0003);
+}
+.chat .send > :last-child {
+  order: -1;
+}
+#impl {
+  display: block;
+  white-space: pre;
+  font: 1em monospace;
+}
+#report {
+  font-size: small;
+}
